@@ -1,7 +1,7 @@
 <?php
 
 $server="localhost";
-$db="northwind";
+$db="media";
 $name="root";
 $password="";
 try{
