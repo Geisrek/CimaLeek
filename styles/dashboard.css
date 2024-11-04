@@ -1,0 +1,81 @@
+.top-bar{
+    display: flex;
+    justify-content: space-between;
+    row-gap: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.top-list{
+    width:60%;
+    display: flex;
+    justify-content: space-between;
+}
+.top-list>a{
+    text-decoration: none;
+    color:  #999999;
+    
+}
+
+.top-list>a:hover{
+    color:  #bbbbbb;
+}
+.container{
+    width: 40vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.d-it{
+    border: 1px solid #55555588;
+    height: 50vh;
+    width: 35vw;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5479f3;
+    border-radius: 0.7em  0.7em 0 0;
+}
+.d-ib{
+    border: 1px solid #55555588;
+    height: 50vh;
+    width: 35vw;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #5479f3;
+    border-radius: 0 0 0.7em  0.7em ;
+}
+.d-ic{
+    display: flex;
+    
+    height: 70vh;
+    width: 35vw;
+}
+.d-it>div, .d-ib>div{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color:  #999999;
+    
+}
+.d-ic>a{
+    border: 1px solid #55555588;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    background-color: #5479f3;
+    text-decoration: none;
+    color: #999999;
+}
