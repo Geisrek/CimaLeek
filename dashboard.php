@@ -30,7 +30,7 @@
             <a href="" class="d-it">
                 <div><h4>Control Movies</h4></div>
             </a><div class="d-ic">
-            <a href="">    <h4>Control Admin</h4></a><a href="">
+            <a href="./addAdmins.php"> <h4>Control Admin</h4></a><a href="">
                     <h4>Control Cat</h4></a>
             </div><a href="" class="d-ib">
                 <div><h4>Control Users</h4></div>
