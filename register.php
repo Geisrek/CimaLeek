@@ -30,7 +30,7 @@
             <input type="file" name="image">
         </div>
         <div class="re-i">
-           <button type="submit">Submit</button>
+           <button type="submit">Sign up</button>
         </div>
        </form>
     </section>

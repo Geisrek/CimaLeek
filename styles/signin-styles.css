@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    height: 20vh;
+    display: flex;
+    background-color: #333333;
+    color: #999999;
+    align-items: center;
+    justify-content: center;
+}
+
+.si-b{
+    height: 80vh;
+    background-color: #333344;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.si-f{
+    height: 50vh;
+    width: 30vw;
+    padding: 5%;
+    background-color: #333355;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.si-i{
+    display: flex;
+    flex-direction: column;
+    color: #999999;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    row-gap: 4px;
+}
+.si-i>input{
+    height: 2rem;
+    border-radius: 0.3rem;
+    font-size: 18px;
+    color: #888888;
+    font-weight: bold;
+}
+.si-i>button{
+    width: 5.4rem;
+    height: 1.7rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: #444477;
+    color: #888888;
+    font-weight: bold;
+}
+.si-i>button:hover{
+    background-color: #666699;
+    color: #aaaaaa;
+}
