@@ -1,0 +1,14 @@
+header{
+    gap:10px;
+    
+}
+.back{
+    position: relative;
+    right: 0;
+    left: 30%;
+   text-decoration: none;
+   color: #999999;
+}
+.back:hover{
+    color:#cccccc;
+}
