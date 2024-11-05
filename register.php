@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>register</title>
-    <link rel="stylesheet" href="styles/register-styles.css">
+    <link rel="stylesheet" href="styles/register.css">
 </head>
 <body>
 
@@ -14,8 +14,16 @@
     <section class="re-b">
        <form action="actions/registerAct.php" method="post" class="re-f"  enctype="multipart/form-data">
         <div class="re-i">
-            <lab>Name</lab>
-            <input type="text" name="name">
+            <lab>User name</lab>
+            <input type="text" name="username">
+        </div>
+        <div class="re-i">
+            <lab>First name</lab>
+            <input type="text" name="F_name">
+        </div>
+        <div class="re-i">
+            <lab>Last name</lab>
+            <input type="text" name="L_name">
         </div>
         <div class="re-i">
             <lab>Email</lab>

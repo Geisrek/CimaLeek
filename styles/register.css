@@ -12,21 +12,23 @@ header{
 }
 
 .re-b{
-    height: 80vh;
+    min-height: 80vh;
     background-color: #333344;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .re-f{
-    height: 50vh;
+    height:auto;
     width: 30vw;
     padding: 5%;
     background-color: #333355;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
 }
 
 .re-i{
