@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Actors</title>
     <link rel="stylesheet" href="styles/comon.css">
+    <link rel="stylesheet" href="styles/addActors-styles.css">
 </head>
 <body>
 <header class="head">
      <div><h1>CimaLeek</h1></div>
-     <div class=""> <h3>Add Admins</h3></div>
+     <div class=""> <h3>Add Actors</h3></div>
      <a href="./dashboard.php" class="back"><h3>Home</h3></a>
     </header>
     <section class="main">
