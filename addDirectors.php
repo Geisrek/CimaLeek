@@ -17,7 +17,7 @@
     <form action="actions/addDirectorsAct.php" method="post" class="re-f"  enctype="multipart/form-data">
         <div class="re-i">
             <lab>Actor name</lab>
-            <input type="text" name="actor_name">
+            <input type="text" name="director_name">
         </div>
         <div class="re-i">
             <div class="re-o">
