@@ -59,3 +59,7 @@ header{
     background-color: #666699;
     color: #aaaaaa;
 }
+.re-o{
+    display: flex;
+    gap: 10px;
+}

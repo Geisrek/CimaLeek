@@ -69,13 +69,20 @@
 }
 .d-ic>a{
     border: 1px solid #55555588;
-    width: 50%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
    
+    
     background-color: #5479f3;
     text-decoration: none;
     color: #777777;
+}
+.d-ic>a>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
