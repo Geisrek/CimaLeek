@@ -14,7 +14,7 @@
             <a href="">
                 <h4>Home</h4>
             </a>
-            <a href="">
+            <a href="./moviesEdit.php">
                 <h4>Movies</h4>
             </a>
             <a href="">

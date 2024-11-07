@@ -69,3 +69,36 @@ header{
     display: flex;
     gap: 10px;
 }
+.m-e{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 2%;
+    background-color: #333355;
+    height: 100vh;
+}
+.card{
+    height: 25vh;
+    width: 12vw;
+    border: #66aaEE 1px solid;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: #68688f;
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #333333;
+    overflow: hidden;
+}
+
+.card>img{
+    height: 70%;
+    
+    
+}
+.card>h5{
+  position: relative;
+  top: 10%;
+ left: 2%;
+}
