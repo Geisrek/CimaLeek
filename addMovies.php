@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Admins</title>
     <link rel="stylesheet" href="styles/comon.css">
-    
+    <?php
+    session_start();
+    ?>
 </head>
 <body>
 <header class="head">
@@ -68,8 +70,14 @@
             
         </div>
         <div class="re-i">
-           <button type="submit">Sign up</button>
+           <button type="submit">Submit</button>
         </div>
+        <?php
+        if(isset($_SESSION["movie_message"])){
+        echo "<h5 style='color:#557799;'>". $_SESSION["movie_message"]."</h5>";
+        unset($_SESSION["movie_message"]);
+    }
+        ?>
        </form>
     </section>
 </body>

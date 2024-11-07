@@ -1,5 +1,6 @@
 <?php
 require_once("../connection.php");
+session_start();
 if((isset($_POST["title"])&&isset($_POST["Product_year"])&&isset($_POST["Unit_price"])&&isset($_POST["quantity"])&&isset($_FILES["thumbnail"]))&&
 (is_string(trim($_POST["title"])))&&
 (is_numeric($_POST["Product_year"])&&is_numeric($_POST["quantity"]))){
@@ -8,15 +9,15 @@ if((isset($_POST["title"])&&isset($_POST["Product_year"])&&isset($_POST["Unit_pr
     $product_year=$_POST["Product_year"];
     $unit_price=$_POST["Unit_price"];
     $quantity=$_POST["quantity"];
-    $director=$_POST["director"];
+    $director=$_POST["directors"];
     $thumbnail=$_FILES["thumbnail"];
-    $ext=pathinfo($image["name"],PATHINFO_EXTENSION);
+    $ext=pathinfo($thumbnail["name"],PATHINFO_EXTENSION);
    // echo "<br/>...".$ext.",".isset($_POST["title"]).",";
     if(!getimagesize($thumbnail["tmp_name"])){
         die("<br/>this size is not an image");
     }
     $targeted_file="uploads/IMG".bin2hex(random_bytes(10)).".".$ext;
-    if($image["size"]>1000000){
+    if($thumbnail["size"]>1000000){
         die("file too large");
     }
  
@@ -27,5 +28,17 @@ if((isset($_POST["title"])&&isset($_POST["Product_year"])&&isset($_POST["Unit_pr
     else{
         echo "error";
     }
-    $sql=""
+    $sql="insert into movies(`Title`,`product_year`,`unit_price`,`quantity`,`director_id`,`thumbnail`)  
+    values(:Title,:product_year,:unit_price,:quantity,:director_id,:thumbnail)";
+    $stmt=$pdo->prepare($sql);
+    $stmt->bindParam("Title",$title);
+    $stmt->bindParam("product_year",$product_year);
+    $stmt->bindParam("unit_price",$unit_price);
+    $stmt->bindParam("quantity",$quantity);
+    $stmt->bindParam("director_id",$director);
+    $stmt->bindParam("thumbnail",$targeted_file);
+    $stmt->execute();
+    
+    $_SESSION["movie_message"]="Movie added successfully";
+    header("location:../addMovies.php");
 }

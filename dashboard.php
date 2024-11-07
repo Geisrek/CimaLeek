@@ -27,13 +27,13 @@
     </header>
     <section class="main">
         <div class="container">
-            <a href="" class="d-it">
-                <div><h4>Control Movies</h4></div>
+            <a href="./addMovies.php" class="d-it">
+                <div><h4>Add Movies</h4></div>
             </a><div class="d-ic">
-            <a href="./addAdmins.php"> <h4>Control Admin</h4></a><a href="./addCategories.php">
-                    <h4>Control Cat</h4></a><a href="./addDirectors.php">
-                    <h4>Control directors</h4></a><a href="./addActors.php">
-                    <h4>Control actors</h4></a>
+            <a href="./addAdmins.php"> <h4>Add Admin</h4></a><a href="./addCategories.php">
+                    <h4>Add Cat</h4></a><a href="./addDirectors.php">
+                    <h4>Add directors</h4></a><a href="./addActors.php">
+                    <h4>Add actors</h4></a>
             </div><a href="" class="d-ib">
                 <div><h4>Control Users</h4></div>
             </a>
