@@ -10,7 +10,8 @@ isset($_POST["quantity"])&&is_numeric($_POST["quantity"])&&isset($_POST["unit_pr
     $unit_price=$_POST["unit_price"];
     $director_id=$_POST["director_id"];
     $category_type=$_POST["category_type"];
-   if(isset($_FILES["thumbnail"])){
+    
+   if(isset($_FILES["thumbnail"])&& $_FILES["thumbnail"]["error"] == UPLOAD_ERR_OK){
 
     $thumbnail=$_FILES["thumbnail"];
     $ext=pathinfo($thumbnail["name"],PATHINFO_EXTENSION);
@@ -41,6 +42,21 @@ isset($_POST["quantity"])&&is_numeric($_POST["quantity"])&&isset($_POST["unit_pr
     $stmt->bindParam("quantity",$quantity);
     $stmt->bindParam("director_id",$director_id);
     $stmt->bindParam("thumbnail",$targeted_file);
+    $stmt->bindParam("category_id",$category_type);
+    $stmt->execute();
+    header("location:../moviesEdit.php");
+   }
+   else{
+    $sql="UPDATE movies
+    set id=:id ,Title=:Title, product_year=:product_year,unit_price=:unit_price,quantity=:quantity,director_id=:director_id
+     WHERE id=:id ";
+    $stmt=$pdo->prepare($sql);
+    $stmt->bindParam("id",$id);
+    $stmt->bindParam("Title",$title);
+    $stmt->bindParam("product_year",$product_year);
+    $stmt->bindParam("unit_price",$unit_price);
+    $stmt->bindParam("quantity",$quantity);
+    $stmt->bindParam("director_id",$director_id);
     $stmt->bindParam("category_id",$category_type);
     $stmt->execute();
     header("location:../moviesEdit.php");
