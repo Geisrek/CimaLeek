@@ -6,6 +6,7 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="styles/comon.css">
     <link rel="stylesheet" href="styles/dashboard.css">
+    <?php session_start(); ?>
 </head>
 <body>
     <header class="top-bar">
@@ -38,6 +39,11 @@
                 <div><h4>Control Users</h4></div>
             </a>
         </div>
+     <?php   if(isset($_SESSION["delete_error"])){
+        ?>
+        <h5><?php echo $_SESSION["delete_error"]; ?></h5>
+        <?php
+        }?>
     </section>
 </body>
 </html>
