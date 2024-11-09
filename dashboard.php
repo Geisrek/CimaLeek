@@ -18,7 +18,7 @@
             <a href="./moviesEdit.php">
                 <h4>Movies</h4>
             </a>
-            <a href="">
+            <a href="./categoriesEdit.php">
                 <h4>Categories</h4>
             </a>
             <a href="">
