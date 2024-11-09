@@ -104,3 +104,10 @@ header{
   top: 10%;
  left: 2%;
 }
+.ad-d{
+    margin: 5px;
+}
+.ad-d>tr>th{
+    margin: 15px;
+    border: 1px solid;
+}

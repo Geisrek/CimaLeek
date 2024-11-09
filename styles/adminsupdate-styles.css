@@ -1,0 +1,42 @@
+.ad-d{
+    margin: 5px;
+}
+.ad-d>tr>th{
+    margin: 15px;
+    border: 1px solid black;
+}
+.ad-d>tr>td{
+    margin: 15px;
+    border: 1px solid black;
+}
+
+.delete{
+    border: 1px solid #FFFFFF;
+    height: 7vh;
+    width: 10vw ;
+    background-color: #d82114;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 0.5rem;
+}
+.delete:hover{
+  background-color:   #FA5337;
+  color: #AAAAFF;
+}
+.update{
+    border: 1px solid #FFFFFF;
+    height: 7vh;
+    width: 10vw ;
+    background-color: #14c1d8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    text-decoration: none;
+}
+.update:hover{
+  background-color:   #4dc5d4;
+  color: #6e6ea5;
+}

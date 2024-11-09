@@ -1,0 +1,24 @@
+
+.ad-d>tr>th{
+    margin: 15px;
+    border: 1px solid black;
+}
+.ad-d>tr>td{
+    margin: 15px;
+    border: 1px solid;
+}
+
+.delete{
+    border: 1px solid #FFFFFF;
+    height: 7vh;
+    width: 10vw ;
+    background-color: #14d87d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+}
+.delete:hover{
+  background-color:   #FA5337;
+  color: #AAAAFF;
+}

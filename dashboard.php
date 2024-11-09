@@ -21,7 +21,7 @@
             <a href="./categoriesEdit.php">
                 <h4>Categories</h4>
             </a>
-            <a href="">
+            <a href="./adminsEdit.php">
                 <h4>Admins</h4>
             </a>
         </div>
@@ -42,7 +42,9 @@
      <?php   if(isset($_SESSION["delete_error"])){
         ?>
         <h5><?php echo $_SESSION["delete_error"]; ?></h5>
+        
         <?php
+        unset($_SESSION["delete_error"]);
         }?>
     </section>
 </body>
