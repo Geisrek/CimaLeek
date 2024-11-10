@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+   
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,11 @@
     <?php session_start(); ?>
 </head>
 <body>
+    <?php
+    if(!isset($_SESSION["user_type"])||$_SESSION["user_type"]!=1){
+        die("You are un able to explore this page");
+    }
+    ?>
     <header class="top-bar">
         <h1>Cimaleek</h1>
         <div class="top-list">

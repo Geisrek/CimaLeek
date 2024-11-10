@@ -74,3 +74,25 @@
   background-color:    #0facb8;
   color: #AAAAFF;
 }
+.add-cart{
+    border: 1px solid #FFFFFF;
+    height: 7vh;
+    width: 10vw ;
+    background-color: #22cacf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+}
+.add-cart:hover{
+    background-color:    #42bedd;
+    color: #AAAAFF;
+  }
+ .back-m{
+    position: relative;
+    right: 0;
+    left: 28%;
+   text-decoration: none;
+   
+   color: #999999;
+}
