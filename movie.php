@@ -10,6 +10,9 @@
 <body>
     <?php
     session_start();
+    if(!isset($_GET["id"])){
+      die("bad request");
+    }
     require_once("connection.php");
     $sql="SELECT * FROM `movies` WHERE id=:id";
     $stmt=$pdo->prepare($sql);
@@ -61,9 +64,30 @@
       <?php
       }
       elseif($_SESSION["user_type"]==2){
+        if(!isset($_GET["open"])){
         ?>
-        <a href="./actions/addToCartAct.php?id=<?php echo $_GET["id"];?>" class=" add-cart">add to cart</a>
+        
+        <a href="./movie.php?open=1&id=<?php echo $_GET["id"]?>" class=" add-cart">add to cart</a>
+        <?php 
+        }
+        if(isset($_GET["open"])&&$_GET["open"]==1){
+          ?>
+          <form action="./actions/addToCartAct.php" method="post" class=".re-f">
+
+            <input type="hidden" name="user_id" value="<?php echo  $_SESSION["user_id"];?>">
+            <input type="hidden" name="movie_id" value="<?php echo $movie["id"];?>">
+            <div class="re-i">
+            <input type="number" name="Qty" id=""></div>
+            <div class="re-i">
+            <button type="submit">submit</button>
+        </div>
+          </form>
+          <?php
+        }
+        
+        ?>
         <?php
+        unset($_GET["open"]);
       }
       ?>
       </div>
