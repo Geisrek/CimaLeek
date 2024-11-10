@@ -18,8 +18,8 @@
     <header class="top-bar">
         <h1>Cimaleek</h1>
         <div class="top-list">
-            <a href="">
-                <h4>Home</h4>
+            <a href="./profile.php">
+                <h4>Profile</h4>
             </a>
             <a href="./moviesEdit.php">
                 <h4>Movies</h4>

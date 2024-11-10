@@ -17,6 +17,9 @@
     <?php
 session_start();
 require_once("connection.php");
+if(!isset($_SESSION["user_type"])){
+    die("You are not allow to enter this section");
+ }
 if(!isset($_GET["id"])||!is_numeric($_GET["id"])){
 
     die("<h1>Something went wrong</h1>");

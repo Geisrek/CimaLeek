@@ -16,11 +16,13 @@ if(isset($_POST["email"])&&isset($_POST["password"])){
         
     if($user["type"]==1){
         $_SESSION["user_type"]=$user["type"];
+        $_SESSION["user_id"]=$user["id"];
         header("location:../dashboard.php");
     }
     elseif($user["type"]==2){
        
         $_SESSION["user_type"]=$user["type"];
+        $_SESSION["user_id"]=$user["id"];
         header("location:../moviesEdit.php");
         die("ok");
     }

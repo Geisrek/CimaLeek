@@ -20,7 +20,14 @@
      <?php }
      elseif($_SESSION["user_type"]==2){?>
      <a href="./profile.php" class="back"><h3>Profile</h3></a>
-     <?php }?>
+     <?php }
+     else{
+        ?>
+     <a href="./profile.php" class="back"><h3>Login</h3></a>
+        <?php
+     }
+     ?>
+     
     </header>
     <section class="main">
    <div class="uf-t">

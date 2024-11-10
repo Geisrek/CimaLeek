@@ -16,6 +16,9 @@
     <section class="main">
     <?php
     require_once("connection.php");
+    if(!isset($_SESSION["user_type"])){
+        die("You are not allow to enter this section");
+     }
     $sql="SELECT * FROM category";
     $stmt=$pdo->prepare($sql);
     $stmt->execute();

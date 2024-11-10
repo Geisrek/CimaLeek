@@ -44,7 +44,12 @@ isset($_POST["L_name"])&&isset($_POST["email"])){
     $stmt->bindParam("image",$image);
    
     $stmt->execute();
-    header("location:../adminsEdit.php");
+    if($_SESSION["user_type"]==1){
+        header("location:../adminsEdit.php");
+    }
+    elseif($_SESSION["user_type"]==2){
+        header("location:../profile.php");
+    }
    }
    else{
     $sql="UPDATE user
@@ -57,10 +62,13 @@ isset($_POST["L_name"])&&isset($_POST["email"])){
     $stmt->bindParam("L_name",$L_name);
     $stmt->bindParam("email",$email);
     $stmt->bindParam("gender",$gender);
-   
-   
     $stmt->execute();
+    if($_SESSION["user_type"]==1){
     header("location:../adminsEdit.php");
+}
+elseif($_SESSION["user_type"]==2){
+    header("location:../profile.php");
+}
    }
     
 }
