@@ -9,8 +9,13 @@
 </head>
 <body>
     <?php
+    
     require_once("connection.php");
     session_start();
+    if(!isset($_SESSION["user_id"])){
+        
+        die("bad request");
+        }
     $sql="SELECT * FROM user WHERE id=:id";
     $stmt=$pdo->prepare($sql);
     $stmt->bindParam("id",$_SESSION["user_id"]);
@@ -27,8 +32,9 @@
      <a href="./dashboard.php" class="back"><h3>Home</h3></a>
      <?php }
      elseif($_SESSION["user_type"]==2){?>
-     
      <a href="./moviesEdit.php" class="back"><h3>Movies</h3></a>
+     <h3><?php echo "<div style='width:10px;'>  </div>";?></h3>
+     <a href="./basket.php" class="back"><h3>Basket</h3></a>
      <?php }?>
     </header>
     <section class="con">
