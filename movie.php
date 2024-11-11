@@ -87,7 +87,12 @@
         
         ?>
         <?php
+        if(isset($_SESSION["Grater_q"])){
+         ?> <h1><?php echo$_SESSION["Grater_q"];?></h1><?php
+
+        }
         unset($_GET["open"]);
+        unset($_SESSION["Grater_q"]);
       }
       ?>
       </div>

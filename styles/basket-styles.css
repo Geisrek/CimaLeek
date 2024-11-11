@@ -1,0 +1,60 @@
+.b-t{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.b-t>tr>th{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    border: 1px solid #333355;
+
+}
+.r-t{
+    display: flex;
+    flex-direction: row;
+}
+.d-t{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    min-width: 80px;
+    width: c;
+   margin: 5px;
+   border: 1px solid #6464a7;
+   background-color: aliceblue;
+   color: #5b5b75; 
+   overflow: scroll;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.d-t::-webkit-scrollbar{
+    display: none;
+}
+.drop{
+    text-decoration: none;
+    color:  #3c3c61; 
+}
+.b-t>tr>td{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+   margin: 5px;
+   border: 1px solid #6464a7;
+   color: #6464a7;
+}
+.sale-form{
+    position: absolute;
+    left: 10%;
+}
+.sale-form>button{
+    width: 5.4rem;
+    height: 1.7rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: #444477;
+    color: #888888;
+    font-weight: bold;
+}
