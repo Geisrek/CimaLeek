@@ -11,7 +11,7 @@ if(isset($_POST["user_id"])&&isset($_POST["movie_id"])&&isset($_POST["Qty"])
 if($qu["quantity"]<$_POST["Qty"]&&$qu["quantity"]==0){
     $_SESSION["Grater_q"]="too much quantity ";
     header("location:../movie.php?id=".$_POST["movie_id"]."");
-    die();
+    die("");
 }
     
 if(!isset($_SESSION["sale_id"])){
@@ -24,13 +24,15 @@ $stmt->bindParam("clientId",$_POST["user_id"]);
 $stmt->bindParam("saleDate",$timestampe);
 $stmt->bindParam("opened",$opened);
 $stmt->execute();
+}
 $sql="SELECT salesId FROM sales WHERE clientId=:clientId AND opened=1";
 $stmt=$pdo->prepare($sql);
 $stmt->bindParam("clientId",$_POST["user_id"]);
 $stmt->execute();
 $sale=$stmt->fetch(PDO::FETCH_ASSOC);
-$_SESSION["sale_id"]=$sale;
-}
+
+$_SESSION["sale_id"]=$sale["salesId"];
+
 $sql="SELECT Title FROM movies WHERE id=:id ";
 $stmt=$pdo->prepare($sql);
 $stmt->bindParam("id",$_POST["movie_id"]);

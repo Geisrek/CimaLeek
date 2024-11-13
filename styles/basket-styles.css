@@ -21,7 +21,8 @@
     justify-content: center;
     padding: 5%;
     min-width: 80px;
-    width: c;
+    width: 10vw;
+    height: 10vh;
    margin: 5px;
    border: 1px solid #6464a7;
    background-color: aliceblue;
@@ -36,22 +37,29 @@
     text-decoration: none;
     color:  #3c3c61; 
 }
-.b-t>tr>td{
+.b-t>.r-t>.d-t{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
+    width: 10vw;
+    height:20vh;
    margin: 5px;
    border: 1px solid #6464a7;
    color: #6464a7;
 }
+.b-t::-webkit-scrollbar{
+    display: none;
+}
 .sale-form{
     position: absolute;
-    left: 10%;
+    right: 10%;
+    width: 20vw;
 }
 .sale-form>button{
-    width: 5.4rem;
-    height: 1.7rem;
+    position: relative;
+    bottom: 10%;
+    width: 10vw;
+    height:20vh;
     border-radius: 0.5rem;
     cursor: pointer;
     background-color: #444477;

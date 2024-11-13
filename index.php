@@ -5,7 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CimaLeek</title>
     <link rel="stylesheet" href="styles/comon.css">
-    <link rel="stylesheet" href="styles/index-styles.css">
+
+    <style>
+        .con{
+    min-height: 80vh;
+    background-color: #333344;
+    display: flex;
+    width: 100%;
+}
+.hot{
+    border: 3px solid #272744;
+    width: 20vw;
+    height: 70vh;
+}
+.hot-i>img{
+   height: 70vh;
+   width: 20vw;
+  
+   
+}
+.dis{
+    width:80vw;
+    height:70vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    color:#999999;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   
+}
+    </style>
 </head>
 <body>
 <header >
@@ -40,10 +71,11 @@
         $movie=$stmt->fetch(PDO::FETCH_ASSOC);
        
            ?>
-          <a href="./moviesEdit.php" class="hot-i"> <img  style="height: 100%;width: 100%;" src="<?php echo $movie["thumbnail"]?>" alt=""></a>
+          <a href="./moviesEdit.php" class="hot-i"> <img   src="<?php echo $movie["thumbnail"]?>" alt=""></a>
         </div>
         <div class="dis">
-
+        <h1>Welcome to CimaLeek </h1>
+        <p>Your best option to explore your nex movies</p>
         </div>
 
     </section>

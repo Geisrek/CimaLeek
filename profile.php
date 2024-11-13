@@ -36,7 +36,9 @@
      elseif($_SESSION["user_type"]==2){?>
      <a href="./moviesEdit.php" class="back"><h3>Movies</h3></a>
      <h3><?php echo "<div style='width:20px;'>  </div>";?></h3>
+     <?php if(isset($_SESSION["Sale_details"])){?>
      <a href="./basket.php" class="back"><h3>Basket</h3></a>
+     <?php } ?>
      <h3><?php echo "<div style='width:20px;'>  </div>";?></h3>
      <a href="./actions/logoutAct.php" class="back"><h3>Logout</h3></a>
      <?php }?>

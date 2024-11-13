@@ -12,12 +12,9 @@
 <header class="head">
      <div><h1>CimaLeek</h1></div>
      <div class=""> <h3>Update Movie</h3></div>
-     <a href="./dashboard.php" class="back"><h3>Home</h3></a>
-    </header>
-    <section class="main">
-    <?php
-session_start();
-require_once("connection.php");
+     <?php 
+     session_start();
+     require_once("connection.php");
 if(!isset($_SESSION["user_type"])){
     die("You are not allow to enter this section");
  }
@@ -25,7 +22,13 @@ if(!isset($_GET["id"])||!is_numeric($_GET["id"])){
 
     die("<h1>Something went wrong</h1>");
 }?>
-<?php
+    
+     <a href="./profile.php" class="back"><h3>Profile</h3></a>
+    
+    </header>
+    <section class="main">
+    <?php
+
 $sql="SELECT * FROM user WHERE id=:id";
 $stmt=$pdo->prepare($sql);
 $stmt->bindParam("id",$_GET["id"]);

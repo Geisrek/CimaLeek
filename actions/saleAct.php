@@ -9,7 +9,7 @@ foreach($_SESSION["Sale_details"] as $detail){
  $stmt->bindParam("id",$detail["movie_id"]);
  $stmt->execute();
  $movie=$stmt->fetch(PDO::FETCH_ASSOC);
- $quy=$movie["quantity"]-$detail["Qty"];
+ $quy=$movie["quantity"]-($movie["quantity"]-$detail["Qty"]);
  $New_quantities[]=["movie_id"=>$detail["movie_id"],"quantity"=>$quy];
  sleep(0.25);
 }
@@ -37,4 +37,4 @@ $stmt->execute();
 }
 unset($_SESSION["Sale_details"]);
 unset($_SESSION["sale_id"]);
-header("../profile.php");
+header("location:../profile.php");

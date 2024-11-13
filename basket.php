@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="styles/comon.css">
     <link rel="stylesheet" href="styles/basket-styles.css">
     <style>
-        .b-t{
+     
+    .b-t{
     display: flex;
     align-items: center;
     justify-content: center;
+    height:70vh;
+    overflow:scroll;
 }
-.b-t>tr>th{
+
+.b-t>.r-t>th{
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -20,14 +24,52 @@
     border: 1px solid #333355;
 
 }
-.b-t>tr>td{
+.d-t{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
+    width: 2vw;
+    height:2vh;
    margin: 5px;
    border: 1px solid #6464a7;
    color: #6464a7;
+}
+.d-d{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    height:16vh;
+   margin: 5px;
+   
+}
+.drop{
+    text-decoration:none;
+    width: 100%;
+    height:40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ff6666;
+   background-color: #ff6666;
+   color: #ffffff;
+   border-radius:0.7rem;
+}
+.drop:hover{
+    border: 1px solid #ff6666;
+   background-color: #aa9999;
+   color: #ff6666;
+}
+.sale-form{
+    position: absolute;
+    bottom:10%;
+    right:10%;
+    position: absolute;
+    right: 10%;
+    width: 20vw;
+}
+.b-t::-webkit-scrollbar{
+    display: none;
 }
 
     </style>
@@ -49,22 +91,26 @@
      
      $sql="SELECT * FROM sales WHERE salesId=:salesId ";
      $stmt=$pdo->prepare($sql);
+     
      $stmt->bindParam("salesId",$_SESSION["sale_id"]);
      $stmt->execute();
      $sale=$stmt->fetch(PDO::FETCH_ASSOC);
+    
        ?>
      <a href="./profile.php" class="back"><h3>Profile</h3></a>
     
     </header>
     <?php
+    
     if(isset($_GET["index"])&&is_numeric($_GET["index"])){
         unset($_SESSION["Sale_details"][$_GET["index"]]);
         $_SESSION["Sale_details"] = array_values($_SESSION["Sale_details"]);
+       
     }
     ?>
     <section class="main">
         <?php
-        
+         print_r($_SESSION["sale_id"]);
         ?>
         <table class="b-t">
          <tr class="r-t">
@@ -75,6 +121,7 @@
             <th class="d-t">date</th>
          </tr>
          <?php
+
          $index=0;
          foreach($_SESSION["Sale_details"] as $sale_detales){
         ?>
@@ -84,7 +131,7 @@
         <td class="d-t"><?php echo $sale_detales["movie_id"];?></td>
         <td class="d-t"><?php echo $sale_detales["Qty"];?></td>
         <td class="d-t"><?php echo $sale["saleDate"];?></td>
-        <td class="d-t"><a href="basket.php?index=<?php echo $index?>" class="drop">drop</a></td>
+        <td class="d-d"><a href="basket.php?index=<?php echo $index?>" class="drop">drop</a></td>
         
     </tr>
         <?php

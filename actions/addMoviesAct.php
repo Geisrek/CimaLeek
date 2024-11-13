@@ -11,6 +11,8 @@ if((isset($_POST["title"])&&isset($_POST["Product_year"])&&isset($_POST["Unit_pr
     $quantity=$_POST["quantity"];
     $director=$_POST["directors"];
     $thumbnail=$_FILES["thumbnail"];
+    $category=$_POST["categories"];
+    print_r($_POST);
     $ext=pathinfo($thumbnail["name"],PATHINFO_EXTENSION);
    // echo "<br/>...".$ext.",".isset($_POST["title"]).",";
     if(!getimagesize($thumbnail["tmp_name"])){
@@ -28,8 +30,8 @@ if((isset($_POST["title"])&&isset($_POST["Product_year"])&&isset($_POST["Unit_pr
     else{
         echo "error";
     }
-    $sql="insert into movies(`Title`,`product_year`,`unit_price`,`quantity`,`director_id`,`thumbnail`)  
-    values(:Title,:product_year,:unit_price,:quantity,:director_id,:thumbnail)";
+    $sql="insert into movies(`Title`,`product_year`,`unit_price`,`quantity`,`director_id`,`thumbnail`,`category_id`)  
+    values(:Title,:product_year,:unit_price,:quantity,:director_id,:thumbnail,:category_id)";
     $stmt=$pdo->prepare($sql);
     $stmt->bindParam("Title",$title);
     $stmt->bindParam("product_year",$product_year);
@@ -37,6 +39,7 @@ if((isset($_POST["title"])&&isset($_POST["Product_year"])&&isset($_POST["Unit_pr
     $stmt->bindParam("quantity",$quantity);
     $stmt->bindParam("director_id",$director);
     $stmt->bindParam("thumbnail",$targeted_file);
+    $stmt->bindParam("category_id",$category);
     $stmt->execute();
     
     $_SESSION["movie_message"]="Movie added successfully";
