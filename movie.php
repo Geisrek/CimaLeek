@@ -10,8 +10,8 @@
 <body>
     <?php
     session_start();
-    if(!isset($_GET["id"])){
-      die("bad request");
+    if(!isset($_GET["id"])||!isset($_SESSION["user_id"])||!isset($_SESSION["user_type"])){
+      header("location:signin.php");
     }
     require_once("connection.php");
     $sql="SELECT * FROM `movies` WHERE id=:id";
@@ -57,6 +57,7 @@
       <h5 class="inf-i"><?php echo $director["name"];?></h5>
       <h5 class="inf-i"><?php echo $category["category_type"];?></h5>
       <div class="inf-i button-con">
+        
       <?php 
       if($_SESSION["user_type"]==1){
       ?>

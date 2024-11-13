@@ -14,16 +14,18 @@
 <body>
 <header class="head">
      <div><h1>CimaLeek</h1></div>
-     <div class=""> <h3>Add Movie</h3></div>
+     <?php if(isset($_SESSION["user_type"]) &&isset($_SESSION["user_id"])){?>
      <?php if($_SESSION["user_type"]==1){?>
      <a href="./dashboard.php" class="back"><h3>Home</h3></a>
      <?php }
      elseif($_SESSION["user_type"]==2){?>
      <a href="./profile.php" class="back"><h3>Profile</h3></a>
-     <?php }
+     <?php }}
      else{
         ?>
-     <a href="./profile.php" class="back"><h3>Login</h3></a>
+     <a href="./signin.php" class="back"><h3>Login</h3></a>
+     <h3><?php echo "<div style='width:20px;'>  </div>";?></h3>
+     <a href="./register.php" class="back"><h3>Signup</h3></a>
         <?php
      }
      ?>
