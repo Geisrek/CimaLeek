@@ -8,7 +8,7 @@ if(isset($_POST["email"])&&isset($_POST["password"])){
     $stmt->bindParam("email",$_POST["email"]);
     $stmt->execute();
     $user=$stmt->fetch(PDO::FETCH_ASSOC);
-    print_r($user);
+
     if(!$user){
         header("location:../register.php");
     }
@@ -24,7 +24,7 @@ if(isset($_POST["email"])&&isset($_POST["password"])){
         $_SESSION["user_type"]=$user["type"];
         $_SESSION["user_id"]=$user["id"];
         header("location:../moviesEdit.php");
-        die("ok");
+        
     }
 }
 
