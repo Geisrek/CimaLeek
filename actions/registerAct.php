@@ -49,9 +49,18 @@ $stmt->bindParam("password",$hashed_password);
 $stmt->bindParam("image",$targeted_file,PDO::PARAM_LOB);
 $stmt->bindParam("type",$type);
 $stmt->execute();
-echo "done";
-
-
+if($type==1){
+    $_SESSION["user_type"]=$user["type"];
+    $_SESSION["user_id"]=$user["id"];
+    header("location:../dashboard.php");
+}
+elseif($type==2){
+   
+    $_SESSION["user_type"]=$user["type"];
+    $_SESSION["user_id"]=$user["id"];
+    header("location:../moviesEdit.php");
+    die("ok");
+}
 }
 else{
     print_r($_POST);
